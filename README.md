@@ -1,84 +1,71 @@
-# Airline Tweet Sentiment Analysis Using RNN (PyTorch)
+#  Airline Tweet Sentiment Analysis Using RNN (PyTorch)
 
-This project demonstrates a Natural Language Processing (NLP) application for sentiment classification of tweets related to US airlines using a Recurrent Neural Network (RNN). Implemented in **PyTorch**, the model classifies each tweet as **positive**, **neutral**, or **negative**, providing insights that can assist airline companies in understanding public opinion and enhancing customer service.
-
----
-
-## Project Summary
-
-- **Objective**: To develop a deep learning model that classifies sentiments in tweets directed at US airlines.
-- **Model**: A custom RNN built in PyTorch.
-- **Dataset**: Kaggle's Twitter US Airline Sentiment Dataset (~14,640 labeled tweets).
-- **Output**: Sentiment classification with visualization and analysis of results.
+This project applies deep learning techniques to analyze sentiments in airline-related tweets using a **Recurrent Neural Network (RNN)** built in **PyTorch**. By classifying tweets into **positive**, **neutral**, or **negative** sentiments, the model helps uncover public opinions toward airline services—enabling data-driven decisions for brand improvement and customer engagement.
 
 ---
 
-##  Technologies Used
+##  Project Summary
 
-| Area              | Tools & Libraries                          |
-|-------------------|--------------------------------------------|
-| Programming       | Python                                     |
-| Data Manipulation | pandas, numpy                              |
-| Deep Learning     | PyTorch                                    |
-| NLP               | re, collections (Counter), tokenization    |
-| Evaluation        | scikit-learn                               |
-| Visualization     | matplotlib, seaborn, WordCloud             |
+In the age of digital communication, social media has become a primary channel for customer feedback—especially for service-based industries like aviation. Airlines receive thousands of mentions daily, many of which include valuable feedback hidden within informal, unstructured text.
 
+This project presents a complete Natural Language Processing (NLP) pipeline to **automatically classify the sentiment of such tweets**, using a custom-built RNN model. The workflow includes:
+
+- Cleaning and preprocessing noisy Twitter data,
+- Tokenization, vocabulary generation, and sequence encoding,
+- Padding and batching of input sequences,
+- Custom RNN implementation using PyTorch,
+- Model training and evaluation using standard metrics,
+- Visual analysis via confusion matrices and word clouds.
+
+This solution is intended to bridge the gap between unstructured social media feedback and actionable insights, offering a strong foundation for sentiment monitoring tools in real-world applications.
 
 ---
 
-##  Dataset Description
+##  Dataset Details
 
-- **Source**: [Kaggle: Twitter US Airline Sentiment](https://www.kaggle.com/datasets/crowdflower/twitter-airline-sentiment)
-- **Attributes Used**:
+- **Source**: [Kaggle – Twitter US Airline Sentiment Dataset](https://www.kaggle.com/datasets/crowdflower/twitter-airline-sentiment)
+- **Total Records**: 14,640 labeled tweets
+- **Classes**:
+  - `positive`
+  - `neutral`
+  - `negative`
+- **Key Features**:
   - `text`: Raw tweet content
-  - `airline_sentiment`: Target sentiment label
-  - `airline`: Airline mentioned in the tweet
-  - `negativereason`: Reason provided for negative sentiments (if applicable)
-- **Label Distribution**:
-  - `Negative`: Majority
-  - `Neutral`: Moderate
-  - `Positive`: Minority
+  - `airline_sentiment`: Sentiment label (target)
+  - `airline`: Mentioned airline
+  - `negativereason`: Reason for dissatisfaction (if applicable)
 
 ---
 
 ##  Project Workflow
 
-1. **Data Loading & Exploration**
-2. **Text Preprocessing**:
-   - Lowercasing
-   - Removing URLs, mentions, special characters
-   - Tokenization
-3. **Vocabulary Creation & Encoding**
-4. **Sequence Padding**
+1. **Data Loading & Inspection**
+2. **Text Cleaning**: Lowercasing, removing URLs, mentions, punctuation
+3. **Tokenization & Vocabulary Building**
+4. **Sequence Encoding & Padding**
 5. **Train-Test Split**
-6. **Custom Dataset Class & DataLoader Setup**
-7. **Model Definition**:
-   - Embedding Layer
-   - RNN Layer
-   - Fully Connected Output Layer
-   - LogSoftmax Activation
-8. **Model Training & Validation**
-9. **Performance Evaluation & Visualization**
-
----
-
-##  Results
-
-- Achieved satisfactory classification accuracy for a basic RNN.
-- Confusion matrix analysis revealed overlap between `neutral` and `negative` sentiments due to linguistic similarity.
-- WordClouds and sentiment-wise analysis highlight commonly used words in each class.
-- Loss curves demonstrate consistent learning during training.
+6. **Custom PyTorch Dataset Class**
+7. **RNN Model Construction**
+8. **Model Training & Optimization**
+9. **Evaluation Metrics & Visualization**
 
 ---
 
 ##  Future Enhancements
 
-- Upgrade to **LSTM** or **GRU** architectures for improved memory handling.
-- Incorporate **pretrained embeddings** to improve semantic understanding.
-- Experiment with **transformer-based models** such as BERT.
-- Apply **attention mechanisms** to focus on key parts of each tweet.
-- Implement techniques to handle **class imbalance**, such as oversampling or weighted loss.
+To improve performance and expand real-world usability, the following enhancements are planned:
 
+### 1. **Model Improvements**
+- Upgrade to **LSTM** or **GRU** for better handling of long-term dependencies.
+- Incorporate **attention mechanisms** to focus on impactful words.
 
+### 2. **Language Understanding**
+- Use **pretrained embeddings** like GloVe or FastText to bring semantic depth.
+- Transition to **transformer-based models** (e.g., BERT) for superior NLP performance.
 
+### 3. **Data Challenges**
+- Address **class imbalance** using oversampling, data augmentation, or weighted loss functions.
+
+### 4. **Deployment & Scaling**
+- Integrate the model into a **real-time dashboard** using the Twitter API to track public sentiment live.
+- Extend to multiple industries (e.g., banking, telecom) for generalized feedback analysis.

@@ -4,7 +4,7 @@ This project demonstrates a Natural Language Processing (NLP) application for se
 
 ---
 
-## 📌 Project Summary
+## Project Summary
 
 - **Objective**: To develop a deep learning model that classifies sentiments in tweets directed at US airlines.
 - **Model**: A custom RNN built in PyTorch.
@@ -13,7 +13,7 @@ This project demonstrates a Natural Language Processing (NLP) application for se
 
 ---
 
-## 🔧 Technologies Used
+##  Technologies Used
 
 | Area              | Tools & Libraries                          |
 |-------------------|--------------------------------------------|
@@ -27,7 +27,7 @@ This project demonstrates a Natural Language Processing (NLP) application for se
 
 ---
 
-## 📊 Dataset Description
+##  Dataset Description
 
 - **Source**: [Kaggle: Twitter US Airline Sentiment](https://www.kaggle.com/datasets/crowdflower/twitter-airline-sentiment)
 - **Attributes Used**:
@@ -42,7 +42,7 @@ This project demonstrates a Natural Language Processing (NLP) application for se
 
 ---
 
-## 🧪 Project Workflow
+##  Project Workflow
 
 1. **Data Loading & Exploration**
 2. **Text Preprocessing**:
@@ -63,7 +63,7 @@ This project demonstrates a Natural Language Processing (NLP) application for se
 
 ---
 
-## 📈 Results
+##  Results
 
 - Achieved satisfactory classification accuracy for a basic RNN.
 - Confusion matrix analysis revealed overlap between `neutral` and `negative` sentiments due to linguistic similarity.
@@ -72,7 +72,7 @@ This project demonstrates a Natural Language Processing (NLP) application for se
 
 ---
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 - Upgrade to **LSTM** or **GRU** architectures for improved memory handling.
 - Incorporate **pretrained embeddings** to improve semantic understanding.
